@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'Inter';
+  src: url(/src/components/Inter.ttf)
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter';
+  margin: 0;
+  background-color: rgba(5, 5, 12, 0.911);
+  color: white;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.925);
+  height: 90px;
+  padding: 30px 25px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+nav > img {
+  width: 40px;
+  margin-right: 7px;
+}
+
+nav > span {
+  color: rgb(0, 247, 255);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+main {
+  padding: 60px 30px;
+  background-image: url(/src/assets/react.svg);
+  background-repeat: no-repeat;
+  background-position: right 70%;
+  background-size: 200px;
+}
+
+main > h1 {
+  margin: 0;
+  font-size: 2.4rem;
+}
+
+.facts-list {
+  margin-top: 46px;
+  max-width: 400px;
+}
+
+.facts-list > li {
+  padding-block: 10px;
+  line-height: 19px;
+}
+
+.facts-list > li::marker {
+  color: rgb(0, 247, 255);
+  font-size: 1.5rem;
+  display: flex;
+}
