@@ -1,0 +1,79 @@
+* {
+  padding: none;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Main Elements */
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  background-color: #F55A5A;
+  height: 55px;
+   color: white;
+}
+
+header > img {
+  width: 24px;
+  margin-right: 10px;
+}
+
+header > h1 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: Inter;
+}
+
+/* Entry */
+article {
+  display: flex;
+  margin: 30px;
+}
+
+/* IMGS */
+.location-icon {
+  width: 14px;
+}
+
+.local-image {
+  width: 10rem;
+  border-radius: .5rem;
+  margin: 20px;
+}
+
+/* info */
+
+.local-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.local-info > h1 {
+  margin-bottom: 20px;
+}
+
+.local-info > p {
+  margin-bottom: 10px;
+}
+
+.date {
+  font-weight: 700;
+}
+
+/* map */
+
+.map {
+  display: flex;
+}
+
+.map > p {
+  margin-right: 10px;
+}
+
+.map > a {
+  color: grey;
+}
