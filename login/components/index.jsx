@@ -15,24 +15,27 @@ export default function LoginPage() {
         "email":email,
         "password":password
        })
+       setIsLogged(true)
+       console.log(isLogged)
     }
     function verifyAcc(){
+
         // verify if current form has a match in the database
     }
     function registerAccount(){
         
-       console.log(data)
+       
        }
     return (
         <>
         {
         isLogged 
-        ? <Login 
-            
-        /> 
-        : <Register
+        ? (<Login 
+            data={data}
+        /> )
+        : (<Register
             handleSubmit={handleSubmit}
-        />}
+        />)}
         </>
         
     )
