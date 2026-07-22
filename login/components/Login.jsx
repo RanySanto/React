@@ -1,35 +1,32 @@
 import React, { useState } from "react"
 import ReactDOM from "react-dom/client"
 
-export default function Login() {
-    const [data, setData] = useState({})
-    function handleSubmit(formData){
-       const username = formData.get("username")
-       const email = formData.get("email")
-       const password = formData.get("password")
+export default function Login(props) {
 
-       function registerAccount(){
-        setData(
-        {
-        "username":username,
-        "email":email,
-        "password":password
-       })
-       }
-    }
-    function verifyAcc(){
+    function verifyAcc(formData){
+        const username = formData.get("username")
+        const email = formData.get("email")
+        const password = formData.get("password")
 
+        if (
+            username === props.data.username &&
+            email === props.data.email &&
+            password === props.data.password 
+        ) {
+            console.log("Logged")
+        } else {
+            console.log("Wrong credentials")
+        }
     }
 
     return (
         <section>
-            <form action={handleSubmit}>
-                <h1>Create an account</h1>
-                <p>Already have a account? <a href="#">Log in</a></p>
+            <form action={verifyAcc}>
+                <h1>Login</h1>
                 <input id="username" type="username" name="username" placeholder="Username"/>
                 <input id="email" type="email" name="email" placeholder="Email"/>
                 <input id="password" type="password" name="password"  placeholder="Password"/>
-                <button type="submit">Create an account</button>
+                <button type="submit">Login</button>
             </form>
         </section>
         
