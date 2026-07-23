@@ -1,23 +1,31 @@
-import React, { useState } from "react"
+import React, { use, useState } from "react"
 import ReactDOM from "react-dom/client"
 
 export default function Login(props) {
-
+    const [hasAccount, setHasAccount] = useState(false)
+    function verifyAcc(username, email, password){
+    
+            // verify if current form has a match in the database
+        }
     function verifyAcc(formData){
         const username = formData.get("username")
         const email = formData.get("email")
         const password = formData.get("password")
 
-        if (
-            username === props.data.username &&
-            email === props.data.email &&
-            password === props.data.password 
-        ) {
-            console.log("Logged")
-        } else {
-            console.log("Wrong credentials")
-        }
+        for(let i = 0; i < props.data.length; i++){
+                if(
+                    username=== props.data[i].username 
+                    && email=== props.data[i].email 
+                    && password=== props.data[i].username
+                ){
+                    setHasAccount(true)
+                    break
+                }
+                else setHasAccount(false)
+            } 
     }
+
+    
 
     return (
         <section>
@@ -28,6 +36,7 @@ export default function Login(props) {
                 <input id="password" type="password" name="password"  placeholder="Password"/>
                 <button type="submit">Login</button>
             </form>
+            {hasAccount ? <span>Login Successful</span> : <span>Please create an account: <a onClick={props.return}>Register</a> </span>}
         </section>
         
     )
