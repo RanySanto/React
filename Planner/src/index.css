@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: none;
+}
+
+/* #040b15 */
+/* #0db5db */
+/* #2aac78 */
+/* #2aac78 */
+
+body {
+  background-color: #040b15;
+  color: white;
+}
+.task-container {
+  background-color: #121925;
+  min-width: 30rem;
+  margin: 1rem;
+  padding: .5rem;
+  border-radius: .5rem;
+}
+.week-container {
+  display: flex;
+}
+.week-container p {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.616);
+}
+.task-div {
+  width: 40px;
+  height: 40px;
+  background-color: #0db5db;
+  margin: 5px 10px;
+  border-radius: .35rem;
+  border: 2px solid rgba(255, 255, 255, 0.616);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-div .on {
+  background-color: #0db5db;
+  border: none;
+}
+
+.task-cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  margin: .5rem;
+}
+
+.tasks-header::before  {
+ background-color: red;
+}
