@@ -1,32 +1,34 @@
 import { useState } from 'react'
 
-function Planner() {
+function Task() {
   // função pra criar uma task
   // a cor é definida aleatoriamente
   
+
+  const [days, setDays] = useState(['MO', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'])
+
   const styles = {
-    backgroundColor:"red",
-    border:"none"
-  }
+      backgroundColor: "#040b15"
+    }
 
-  const [days, setDays] = useState(['MO', 'TUE', 'WED', 'THU', 'FRI'])
-  const [on, setOn]= useState(false)
-
-  days.map(()=>{{}})
+  
   function toggle(){
-    setOn(prevOn=>!prevOn)
-    console.log("hello")
+
   }
+  const daysElement = days.map(day =>
+    <div className='task-cont'>
+          <p>{day}</p>
+          <div className='task-div' key={day} onClick={()=>{toggle()}} ></div>
+        </div>
+
+  )
 
   return (
     <>
       <div className='task-container'>
         <div className='tasks-header'><p>Morning Workout</p> <span className='streak'>1</span></div>
         <div className='week-container'>
-        <div className='task-cont'>
-          <p>MO</p>
-          <div className='task-div' onClick={toggle} style={on ? {backgroundColor:"#0db5db"} : {backgroundColor:"#040b15"}} ></div>
-        </div>
+          {daysElement}
         </div>
       </div>
       <div className="task-container"></div>
@@ -34,4 +36,4 @@ function Planner() {
   )
 }
 
-export default Planner
+export default Task
