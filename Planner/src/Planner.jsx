@@ -1,39 +1,20 @@
 import { useState } from 'react'
+import Task from './Task'
+import Calendar from './Calendar'
 
-function Task() {
-  // função pra criar uma task
-  // a cor é definida aleatoriamente
-  
+function Planner() {
+ 
 
-  const [days, setDays] = useState(['MO', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'])
-
-  const styles = {
-      backgroundColor: "#040b15"
-    }
-
-  
-  function toggle(){
-
-  }
-  const daysElement = days.map(day =>
-    <div className='task-cont'>
-          <p>{day}</p>
-          <div className='task-div' key={day} onClick={()=>{toggle()}} ></div>
-        </div>
-
-  )
 
   return (
     <>
-      <div className='task-container'>
-        <div className='tasks-header'><p>Morning Workout</p> <span className='streak'>1</span></div>
-        <div className='week-container'>
-          {daysElement}
-        </div>
-      </div>
-      <div className="task-container"></div>
+      {/* <Task taskName={"Workout"} color={"#2aac78"}/>
+      <Task taskName={"Drawing"} color={"#0db5db"}/> */}
+      <Calendar/>
+      
+      
     </>
   )
 }
 
-export default Task
+export default Planner
