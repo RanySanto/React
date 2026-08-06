@@ -5,18 +5,20 @@ function Task(props) {
   // função pra criar uma task
   // a cor é definida aleatoriamente
   
-      const [on, setOn] = useState(false)
-    function toggle(){
-        // setOn(prevOn => !prevOn)
-        console.log("clicked")
-    }
+    
 
   
 
-  const [days, setDays] = useState([{day:'MO', active:false, id:1}, {day:'TUE', active:false, id:2}, {day:'WED', active:false, id:3}, {day:'THUR', active:false, id:4}, {day:'FRI', active:false, id:5}, {day:'SAT', active:false, id:6}, {day:'SUN', active:false, id:7}])
+  const [days, setDays] = useState([{day:'MO', on:false, id:1}, {day:'TUE', on:false, id:2}, {day:'WED', on:false, id:3}, {day:'THUR', on:false, id:4}, {day:'FRI', on:false, id:5}, {day:'SAT', on:false, id:6}, {day:'SUN', on:false, id:7}])
+  function toggle(id){
+       setDays(prevDays=>prevDays.map(item=>{
+        return item.id === id ? {...item, on: !item.on} : item
+       }))
+    }
+
 
   const daysElement = days.map(day =>
-    <Day toggle={toggle} id={day.id} day={day.day} active={day.active} color={props.color}/>
+    <Day toggle={toggle} id={day.id} day={day.day} on={day.on} color={props.color}/>
   )
 
    
