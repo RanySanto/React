@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: none;
+}
+
+body {
+ background-color: #04bfe0;
+ height:100vh;
+ width: 100%;
+ color: white;
+}
+/* containers */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.weather-container {
+    width: 15rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.weather-container h2 {
+    font-size: 50px;
+}
+.info-container {
+    display: flex;
+}
+
+/* icons */
+.icon {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.location-icon {
+    background-image: url(/img/location.png);
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.weather-icon {
+    background-image: url(/img/clear-sky.png);
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+.wind-icon {
+    background-image: url(/img/wind.png);
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+.humidity-icon {
+    background-image: url(/img/humidity.png);
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+.feels-like-icon {
+
+}
+
+/* html elements */
+h1 {
+    font-size: 50px;
+}
+h3 {
+    font-size: 30px;
+}
+p {
+    font-size: 15px;
+    color:;
+}
