@@ -19,46 +19,66 @@ const display = document.getElementById("display")
 
 
 
-one.addEventListener("click", target=>(showCalc(one.textContent)))
-two.addEventListener("click", target=>(showCalc(two.textContent)))
-three.addEventListener("click", target=>(showCalc(three.textContent)))
-four.addEventListener("click", target=>(showCalc(four.textContent)))
-five.addEventListener("click", target=>(showCalc(five.textContent)))
-six.addEventListener("click", target=>(showCalc(six.textContent)))
-seven.addEventListener("click", target=>(showCalc(seven.textContent)))
-eight.addEventListener("click", target=>(showCalc(eight.textContent)))
-nine.addEventListener("click", target=>(showCalc(nine.textContent)))
-zero.addEventListener("click", target=>(showCalc(zero.textContent)))
-deleteOne.addEventListener("click", target=>(showCalc(deleteOne.textContent)))
-divide.addEventListener("click", target=>(showCalc(divide.textContent)))
-multiply.addEventListener("click", target=>(showCalc(multiply.textContent)))
-minus.addEventListener("click", target=>(showCalc(minus.textContent)))
-plus.addEventListener("click", target=>(showCalc(plus.textContent)))
-equal.addEventListener("click", target=>(showCalc(equal.textContent)))
+one.addEventListener("click", target=>(appendValue(one.textContent)))
+two.addEventListener("click", target=>(appendValue(two.textContent)))
+three.addEventListener("click", target=>(appendValue(three.textContent)))
+four.addEventListener("click", target=>(appendValue(four.textContent)))
+five.addEventListener("click", target=>(appendValue(five.textContent)))
+six.addEventListener("click", target=>(appendValue(six.textContent)))
+seven.addEventListener("click", target=>(appendValue(seven.textContent)))
+eight.addEventListener("click", target=>(appendValue(eight.textContent)))
+nine.addEventListener("click", target=>(appendValue(nine.textContent)))
+zero.addEventListener("click", target=>(appendValue(zero.textContent)))
+deleteOne.addEventListener("click", target=>(appendValue(deleteOne.textContent)))
+divide.addEventListener("click", target=>(appendOperation(divide.textContent)))
+multiply.addEventListener("click", target=>(appendOperation(multiply.textContent)))
+minus.addEventListener("click", target=>(appendOperation(minus.textContent)))
+plus.addEventListener("click", target=>(appendOperation(plus.textContent)))
+equal.addEventListener("click", ()=>(calculate()))
 
-let calc = []
-display.textContent = calc
+let prevValue = ""
+let operation = ""
+let nextValue = ""
+let total = ""
 
-function showCalc(number){
 
-    calc += number
-    console.log(calc)
-    display.textContent = calc
+function appendValue(number){
+    if (operation === ""){
+        prevValue += number
+        console.log(parseInt(prevValue))
+    }   else {
+        nextValue += number
+        console.log(parseInt(nextValue))
+        // value1 operation value2
+    }
 }
 
-function addNumber(){
-    
-    display.textContent = calc
+function appendOperation(signal){
+    if (operation===""){
+        operation += signal
+        console.log(signal)
+    } else {}
 }
-function subtractNumber(){
 
-    display.textContent = calc
-}
-function divideNumber(){
-
-    display.textContent = calc
-}
-function multiplyNumber(){
-
-    display.textContent = calc
+function calculate(){
+    switch (operation) {
+        case "+" :
+            total = parseInt(prevValue) + parseInt(nextValue)
+            break
+        case "-" :
+            total = parseInt(prevValue) - parseInt(nextValue)
+            break
+        case "X" :
+            total = parseInt(prevValue) * parseInt(nextValue)
+            break
+        case "/" :
+            total = parseInt(prevValue) / parseInt(nextValue)
+            break
+        default:
+            console.log("Please make a valid expression.")
+    }
+    console.log(total)
+    prevValue = total
+    nextValue = ''
+    operation = ''
 }
